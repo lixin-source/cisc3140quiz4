@@ -1,6 +1,7 @@
 const functions = require("firebase-functions");
 const admin = require('firebase-admin');
 var serviceAccount = require("./serviceAccountKey.json");
+//move serviceAccountKey.json back into repo to run
 
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount)
