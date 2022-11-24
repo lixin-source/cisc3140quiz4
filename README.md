@@ -3,6 +3,7 @@ this repository contains the api endpoints to our database on firebase
 
 
 ## the process of creating the api and installations
+- sudo npm install -g firebase-tools
 - Firebase login
 - Firebase init
 - Select functions
@@ -59,6 +60,8 @@ Create main route app.get('/', (req, res) => {
 - create firebase account, you need to be added to the project
 - get service key (generate a new service key in the project --> go to setting --> service accounts --> generate new key --> drag json file (key) into the functions folder --> change key (.json) file to 'serviceAccountKey.json') )
 - in terminal, cd to 'functions' folder, 'npm install' , then 'npm run serve' 
+- you should get 'functions[us-central1-app]: http function initialized (http://127.0.0.1:5001/cisc3140quiz4/us-central1/app)'
+- (http://127.0.0.1:5001/cisc3140quiz4/us-central1/app) is the server
 - once you are connected to the server, go to postman (or any REST clients) to execute endpoints
 
 ## Endpoints:
