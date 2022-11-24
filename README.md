@@ -59,10 +59,11 @@ Create main route app.get('/', (req, res) => {
 - pull from repository
 - create firebase account, you need to be added to the project
 - get service key (generate a new service key in the project --> go to setting --> service accounts --> generate new key --> drag json file (key) into the functions folder --> change key (.json) file to 'serviceAccountKey.json') )
-- in terminal, cd to 'functions' folder, 'npm install' , then 'npm run serve' 
+- in terminal, cd to 'functions' folder, 'npm install', 'npm audit fix' if needed, 'npm install -g firebase-tools' ('sudo npm install -g firebase-tools' on macOS) then 'npm run serve' 
 - you should get 'functions[us-central1-app]: http function initialized (http://127.0.0.1:5001/cisc3140quiz4/us-central1/app)'
 - (http://127.0.0.1:5001/cisc3140quiz4/us-central1/app) is the server
-- once you are connected to the server, go to postman (or any REST clients) to execute endpoints
+- once you are connected to the server, go to postman (or any REST client) to execute endpoints
+- desktop postman app has more functionality for requests
 
 ## Endpoints:
 
