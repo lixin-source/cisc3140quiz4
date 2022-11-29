@@ -14,12 +14,15 @@ app.use(cors({origin: true}));
 //main db ref
 const db = admin.firestore();
 //routes
+const bodyParser = require('body-parser');
+const jsonParser = bodyParser.json();
+app.use(bodyParser.json());
 app.get('/', (req, res) => {
     return res.status(200).send('heloo')
 });
 
 //create post()
-app.post('/api/create', (req, res) => {
+app.post('/api/create', jsonParser, function (req, res) {
     (async () => {
         try {
             await db.collection('sightings').doc(`/${Date.now()}/`).create({
@@ -36,7 +39,7 @@ app.post('/api/create', (req, res) => {
             console.log(error);
             return res.status(500).send({status : "failed", msg: error});
         }
-    })();
+    })()
 });
 //get get() -- single, specific data
 app.get('/api/get/:id', (req, res) => {
@@ -80,7 +83,8 @@ app.get('/api/getAll', (req, res) => {
                 return response;
             });
 
-            return res.status(200).send({status : "success", data: response});
+            //return res.status(200).send({status : "success", data: response});
+            return res.status(200).send(response);
         } catch (error) {
             console.log(error);
             return res.status(500).send({status : "failed", msg: error});
